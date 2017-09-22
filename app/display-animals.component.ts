@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Animal } from './animal.model';
 import { AgePipe } from './Age.pipe';
+import { DietPipe } from './Diet.pipe';
 
 
 @Component({
@@ -8,12 +9,18 @@ import { AgePipe } from './Age.pipe';
   template: `
   <table id="filterTable">
   <tr>
-  <td><span id="filter">FILTER</span></td>
-  <td><select (change)="onChange($event.target.value)">
-     <option value="allAnimals" selected="selected">All Animals</option>
+  <td><span id="filter">FILTERS</span></td>
+  <td><select (change)="ageFilterChange($event.target.value)">
+     <option value="allAnimals" selected="selected">All Ages</option>
      <option value="youngAnimals">Young Animals</option>
      <option value="matureAnimals">Mature Animals</option>
    </select></td>
+   <td><select (change)="dietFilterChange($event.target.value)">
+      <option value="allAnimals" selected="selected">All Diets</option>
+      <option value="carnivores">Carnivores Only</option>
+      <option value="herbivores">Herbivores Only</option>
+      <option value="omnivores">Omnivores Only</option>
+    </select></td>
    </tr>
    </table>
 
@@ -34,7 +41,7 @@ import { AgePipe } from './Age.pipe';
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor='let currentAnimal of childAnimalList | Age:filterByAge'>
+        <tr *ngFor='let currentAnimal of childAnimalList | Age:filterByAge | Diet:filterByDiet'>
           <td>{{currentAnimal.name}}</td>
           <td>{{currentAnimal.species}}</td>
           <td>{{currentAnimal.age}}</td>
@@ -56,12 +63,17 @@ export class DisplayAnimalsComponent {
   @Output() editClickSender = new EventEmitter();
 
   filterByAge: string = "allAnimals";
+  filterByDiet: string = "allAnimals";
 
   editButtonHasBeenClicked(animalToEdit : Animal) {
     this.editClickSender.emit(animalToEdit);
   }
 
-  onChange(optionFromMenu){
+  ageFilterChange(optionFromMenu){
     this.filterByAge = optionFromMenu;
+  }
+
+  dietFilterChange(optionFromMenu){
+    this.filterByDiet = optionFromMenu;
   }
 }
