@@ -24,7 +24,7 @@ _An application for keeping track of important details related to the animals at
 | The application shall allow the user to calculate the total number of caretakers needed based on the animals in the zoo | Animal[] | 12 caretakers |
 
 # Screenshot
-![Main page](resources/images/screenshot.jpg)
+![Main page](resources/images/screenshoot.jpg)
 
 # Potential Future Improvements
 * Add ability to remove animals if they are transferred to another zoo
