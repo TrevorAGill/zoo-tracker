@@ -3,9 +3,7 @@ import { Animal } from './animal.model'
 
 @Component({
   selector: 'app-root',
-  template: `
-  <h1>Placeholder Info</h1>
-  `
+  templateUrl: 'app/app.component.html'
 })
 
 export class AppComponent {
