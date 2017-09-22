@@ -6,11 +6,17 @@ import { AgePipe } from './Age.pipe';
 @Component({
   selector: 'display-animals',
   template: `
-  <select (change)="onChange($event.target.value)">
-      <option value="allAnimals" selected="selected">All Animals</option>
-      <option value="youngAnimals">Young Animals</option>
-      <option value="matureAnimals">Mature Animals</option>
-    </select>
+  <table id="filterTable">
+  <tr>
+  <td><span id="filter">FILTER</span></td>
+  <td><select (change)="onChange($event.target.value)">
+     <option value="allAnimals" selected="selected">All Animals</option>
+     <option value="youngAnimals">Young Animals</option>
+     <option value="matureAnimals">Mature Animals</option>
+   </select></td>
+   </tr>
+   </table>
+
 
     <table class="table table-hover">
       <thead>
@@ -38,7 +44,7 @@ import { AgePipe } from './Age.pipe';
           <td>{{currentAnimal.caretakers}}</td>
           <td>{{currentAnimal.likes}}</td>
           <td>{{currentAnimal.dislikes}}</td>
-          <td><button class="btn btn-info" (click)="editButtonHasBeenClicked(currentAnimal)">Edit</button></td>
+          <td><button class="btn btn-primary" (click)="editButtonHasBeenClicked(currentAnimal)">Edit</button></td>
         </tr>
       </tbody>
     </table>

@@ -1,13 +1,19 @@
-<h1>Animals</h1>
 <div class="container">
 
-  <display-animals [childAnimalList]="masterAnimalList" (editClickSender)="editAnimal($event)"></display-animals>
+  <div id="intro">
+    <h1>Animal Tracker Application</h1>
+    <p>This application is designed to assist zoos with managing important details about their animals. The application provides the ability to add new animals and filter all animals based on their age. This page has been optimized to provide improved accessibility to vision impaired staff and can be used in conjunction with a screen reader.</p>
+  </div>
+  <hr>
 
-
-  <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender)="finishedEditing()"></edit-animal>
+  <new-animal (newAnimalSender)="addAnimal($event)"></new-animal>
 
   <hr>
 
-  <!-- <new-keg (newKegSender)="addKeg($event)"></new-keg> -->
+  <display-animals [childAnimalList]="masterAnimalList" (editClickSender)="editAnimal($event)"></display-animals>
+
+  <hr>
+
+  <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender)="finishedEditing()"></edit-animal>
 
 </div>

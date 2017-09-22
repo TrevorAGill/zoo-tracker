@@ -1,0 +1,56 @@
+input {
+  margin-left: 30px;
+  border-width: medium;
+  border-color: black;
+}
+
+hr {
+  border: none;
+  height: 3px;
+  background-color: #333;
+}
+
+#intro {
+  width: 600px;
+  font-size: 20px;
+  text-align: center;
+  margin-left: 300px;
+  text-align: justify;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #f4bc42;
+}
+
+.btn-primary {
+  border-width: medium;
+  border-color: black;
+  font-weight: bolder;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #961010;
+  border-color: white;
+}
+
+input:focus {
+  background-color: #f4bc42;
+}
+
+select {
+  height: 40px;
+  width: 250px;
+  border-width: medium;
+}
+
+#filter {
+  font-size: 20pt;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+#filterTable {
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
