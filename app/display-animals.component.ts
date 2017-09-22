@@ -7,7 +7,7 @@ import { DietPipe } from './Diet.pipe';
 @Component({
   selector: 'display-animals',
   template: `
-  <table id="filterTable">
+  <table onload="calcTotalCaretakers(childAnimalList)" id="filterTable">
   <tr>
   <td><span id="filter">FILTERS</span></td>
   <td><select (change)="ageFilterChange($event.target.value)">
@@ -23,7 +23,6 @@ import { DietPipe } from './Diet.pipe';
     </select></td>
    </tr>
    </table>
-
 
     <table class="table table-hover">
       <thead>
@@ -55,6 +54,8 @@ import { DietPipe } from './Diet.pipe';
         </tr>
       </tbody>
     </table>
+    <button name="calculatecare" class="btn btn-primary"(click)=calcTotalCaretakers(childAnimalList)>Calculate Total Caretakers</button> <span id="caretakerCount">{{totalCare}}</span>
+
   `
 })
 
@@ -64,16 +65,23 @@ export class DisplayAnimalsComponent {
 
   filterByAge: string = "allAnimals";
   filterByDiet: string = "allAnimals";
+  totalCare: number = 0;
 
   editButtonHasBeenClicked(animalToEdit : Animal) {
     this.editClickSender.emit(animalToEdit);
   }
 
-  ageFilterChange(optionFromMenu){
+  ageFilterChange(optionFromMenu) {
     this.filterByAge = optionFromMenu;
   }
 
-  dietFilterChange(optionFromMenu){
+  dietFilterChange(optionFromMenu) {
     this.filterByDiet = optionFromMenu;
+  }
+
+  calcTotalCaretakers(childAnimalList) {
+    this.totalCare = 0;
+    childAnimalList.forEach((animal)=>
+      this.totalCare += parseInt(animal.caretakers))
   }
 }

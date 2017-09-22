@@ -12,10 +12,9 @@ hr {
 
 #intro {
   width: 600px;
-  font-size: 20px;
-  text-align: center;
+  font-size: 18px;
   margin-left: 300px;
-  text-align: justify;
+  text-align: center;
 }
 
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
@@ -54,4 +53,32 @@ select {
 #filterTable {
   margin-bottom: 25px;
   margin-top: 25px;
+}
+
+#caretakerCount {
+  border-style: solid;
+  border-width: medium;
+  padding: 8px;
+  border-color: black;
+  font-size: 16;
+  margin-left: 4px;
+}
+
+.container {
+  background-color: white;
+  margin-top: 40px;
+  border-width: medium;
+  border-color: black;
+}
+
+body {
+  background: url('../../resources/images/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 40px;
 }
