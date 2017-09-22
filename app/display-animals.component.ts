@@ -38,7 +38,7 @@ import { AgePipe } from './Age.pipe';
           <td>{{currentAnimal.caretakers}}</td>
           <td>{{currentAnimal.likes}}</td>
           <td>{{currentAnimal.dislikes}}</td>
-          <td><button class="btn btn-info" (click)="editButtonHasBeenClicked(currentKeg)">Edit</button></td>
+          <td><button class="btn btn-info" (click)="editButtonHasBeenClicked(currentAnimal)">Edit</button></td>
         </tr>
       </tbody>
     </table>

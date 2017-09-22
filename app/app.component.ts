@@ -18,4 +18,8 @@ export class AppComponent {
     this.selectedAnimal = clickedAnimal;
   };
 
+  finishedEditing() {
+    this.selectedAnimal = null;
+  }
+
 }

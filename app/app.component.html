@@ -1,13 +1,13 @@
 <h1>Animals</h1>
 <div class="container">
 
-  <display-animals [childAnimalList]="masterAnimalList" (clickSender)="editAnimal($event)"></display-animals>
+  <display-animals [childAnimalList]="masterAnimalList" (editClickSender)="editAnimal($event)"></display-animals>
 
 
-  <!-- <edit-keg [childSelectedKeg]="selectedKeg" (doneButtonClickedSender)="finishedEditing()"></edit-keg>
+  <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender)="finishedEditing()"></edit-animal>
 
   <hr>
 
-  <new-keg (newKegSender)="addKeg($event)"></new-keg> -->
+  <!-- <new-keg (newKegSender)="addKeg($event)"></new-keg> -->
 
 </div>

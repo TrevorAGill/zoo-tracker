@@ -8,6 +8,6 @@ export class Animal {
     public sex: string,
     public caretakers: number,
     public likes: string,
-    public dislike: string
+    public dislikes: string
   ){}
 }
