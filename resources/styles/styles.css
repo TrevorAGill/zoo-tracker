@@ -65,10 +65,9 @@ select {
 }
 
 .container {
-  background-color: white;
+  background-color: #eff0f2;
   margin-top: 40px;
-  border-width: medium;
-  border-color: black;
+  border: 1px solid black;
 }
 
 body {
