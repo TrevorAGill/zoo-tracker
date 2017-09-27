@@ -77,8 +77,8 @@ export class NewAnimalComponent {
     likes: string,
     dislikes: string
   ) {
-    let caretakersNum = parseInt(caretakers);
-    let ageNum = parseInt(age);
+    let caretakersNum: number = caretakers;
+    let ageNum: number = age;
     var newAnimalToAdd: Animal = new Animal(
       name,
       species,

@@ -1,4 +1,4 @@
-input {
+input, select, .diet{
   margin-left: 30px;
   border-width: medium;
   border-color: black;
